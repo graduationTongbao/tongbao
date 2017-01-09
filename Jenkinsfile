@@ -9,6 +9,6 @@ node {//运行节点
         sh "${mvnHome}/bin/mvn -B clean package"//maven的清理和打包
     }
     stage('deploy') {
-        mv /root/.jenkins/workspace/tongbao/target/tongbao.war /usr/local/tomcat/apache-tomcat-9.0.0.M15/webapps
+        sh "mv /target/tongbao.war /usr/local/tomcat/apache-tomcat-9.0.0.M15/webapps"
     }
 }
