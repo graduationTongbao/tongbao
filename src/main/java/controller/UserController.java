@@ -104,7 +104,7 @@ public class UserController {
                 e.printStackTrace();
             }
             int id = userService.addFile(storeName);
-            String url = "http://120.27.112.9:8080/tongbao/user/picture?id="+id;
+            String url = "http://182.92.239.143:8080/tongbao/user/picture?id="+id;
             UrlInfo urlInfo = new UrlInfo();
             urlInfo.setUrl(url);
             return RestResult.CreateResult(1,urlInfo);
@@ -361,3 +361,4 @@ public class UserController {
     }
 
 }
+
