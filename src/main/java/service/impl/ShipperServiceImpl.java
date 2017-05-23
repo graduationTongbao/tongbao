@@ -103,12 +103,14 @@ public class ShipperServiceImpl implements ShipperService{
             Frequent_driver fd=(Frequent_driver)listTemp.get(i);
             model.User userTemp=userDao.getUserById(fd.getDriver_id());
             UserSimple user = new UserSimple();
-            user.setNickName(userTemp.getNick_name());
-            user.setId(userTemp.getId());
-            user.setPhoneNum(userTemp.getPhone_number());
-            user.setIconUrl(userTemp.getIcon());
-            user.setRegisterTime(userTemp.getRegister_time()+"");
-            list.add(user);
+            if (userTemp != null && !userTemp.equals(null)){
+                user.setNickName(userTemp.getNick_name());
+                user.setId(userTemp.getId());
+                user.setPhoneNum(userTemp.getPhone_number());
+                user.setIconUrl(userTemp.getIcon());
+                user.setRegisterTime(userTemp.getRegister_time()+"");
+                list.add(user);
+            }
         }
 
         return list;
